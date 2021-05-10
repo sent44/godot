@@ -211,6 +211,7 @@ public:
 	virtual void convert_indent_to_tabs() override;
 	virtual void tag_saved_version() override;
 
+	virtual int cursor_get_line() override;
 	virtual void goto_line(int p_line, bool p_with_error = false) override;
 	void goto_line_selection(int p_line, int p_begin, int p_end);
 	void goto_line_centered(int p_line);

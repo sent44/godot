@@ -454,6 +454,15 @@ void ScriptEditor::_goto_script_line(REF p_script, int p_line) {
 	}
 }
 
+int ScriptEditor::_cursor_get_script_line() {
+	ScriptEditorBase *current = _get_current_editor();
+	if (current) {
+		return current->cursor_get_line();
+	} else {
+		return -1;
+	}
+}
+
 void ScriptEditor::_set_execution(REF p_script, int p_line) {
 	Ref<Script> script = Object::cast_to<Script>(*p_script);
 	if (script.is_valid() && (script->has_source_code() || script->get_path().is_resource_file())) {
@@ -3270,6 +3279,7 @@ void ScriptEditor::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("drop_data_fw", "point", "data", "from"), &ScriptEditor::drop_data_fw);
 
 	ClassDB::bind_method(D_METHOD("goto_line", "line_number"), &ScriptEditor::_goto_script_line2);
+	ClassDB::bind_method(D_METHOD("cursor_get_line"), &ScriptEditor::_cursor_get_script_line);
 	ClassDB::bind_method(D_METHOD("get_current_script"), &ScriptEditor::_get_current_script);
 	ClassDB::bind_method(D_METHOD("get_open_scripts"), &ScriptEditor::_get_open_scripts);
 	ClassDB::bind_method(D_METHOD("open_script_create_dialog", "base_name", "base_path"), &ScriptEditor::open_script_create_dialog);

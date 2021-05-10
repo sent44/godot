@@ -2608,6 +2608,11 @@ void VisualScriptEditor::goto_line(int p_line, bool p_with_error) {
 	}
 }
 
+int VisualScriptEditor::cursor_get_line() {
+	// I don't even know how visual script work, so I will return -1 for time begin.
+	return -1;
+}
+
 void VisualScriptEditor::set_executing_line(int p_line) {
 	// todo: add a way to show which node is executing right now.
 }

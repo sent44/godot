@@ -141,6 +141,7 @@ public:
 	virtual bool is_unsaved() = 0;
 	virtual Variant get_edit_state() = 0;
 	virtual void set_edit_state(const Variant &p_state) = 0;
+	virtual int cursor_get_line() = 0;
 	virtual void goto_line(int p_line, bool p_with_error = false) = 0;
 	virtual void set_executing_line(int p_line) = 0;
 	virtual void clear_executing_line() = 0;
@@ -360,6 +361,7 @@ class ScriptEditor : public PanelContainer {
 
 	void _goto_script_line2(int p_line);
 	void _goto_script_line(REF p_script, int p_line);
+	int _cursor_get_script_line();
 	void _set_execution(REF p_script, int p_line);
 	void _clear_execution(REF p_script);
 	void _breaked(bool p_breaked, bool p_can_debug);

@@ -292,6 +292,10 @@ void TextEditor::goto_line_selection(int p_line, int p_begin, int p_end) {
 	code_editor->goto_line_selection(p_line, p_begin, p_end);
 }
 
+int TextEditor::cursor_get_line() {
+	return code_editor->get_text_editor()->cursor_get_line();
+}
+
 void TextEditor::set_executing_line(int p_line) {
 	code_editor->set_executing_line(p_line);
 }

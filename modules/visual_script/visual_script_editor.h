@@ -300,6 +300,7 @@ public:
 	virtual Variant get_edit_state() override;
 	virtual void set_edit_state(const Variant &p_state) override;
 	virtual void goto_line(int p_line, bool p_with_error = false) override;
+	virtual int cursor_get_line() override;
 	virtual void set_executing_line(int p_line) override;
 	virtual void clear_executing_line() override;
 	virtual void trim_trailing_whitespace() override;

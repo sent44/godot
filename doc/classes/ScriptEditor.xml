@@ -21,6 +21,13 @@
 			<description>
 			</description>
 		</method>
+		<method name="cursor_get_line">
+			<return type="int">
+			</return>
+			<description>
+				Returns the line the editing cursor is at in current script. First line return 0. If there is no current script, return -1.
+			</description>
+		</method>
 		<method name="drop_data_fw">
 			<return type="void">
 			</return>

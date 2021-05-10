@@ -397,6 +397,10 @@ void ScriptTextEditor::tag_saved_version() {
 	code_editor->get_text_editor()->tag_saved_version();
 }
 
+int ScriptTextEditor::cursor_get_line() {
+	return code_editor->get_text_editor()->cursor_get_line();
+}
+
 void ScriptTextEditor::goto_line(int p_line, bool p_with_error) {
 	code_editor->goto_line(p_line);
 }
